@@ -17,9 +17,9 @@ variable "instance_names" {
   default = ["jenkins", "tomcat-1", "Monitoring server"]
 }
 
-resource "aws_s3_bucket" "one" :
+resource "aws_s3_bucket" "one" {
   bucket = "project-netflix-bucket33"
   versioning {
     enabled = true
   }
-
+}
