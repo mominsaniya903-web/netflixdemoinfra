@@ -6,8 +6,8 @@ resource "aws_instance" "one" {
   count                  = 3
   ami                    = "ami-0b6d9d3d33ba97d99"
   instance_type          = "t2.medium"
-  key_name               = "saniya"
-  vpc_security_group_ids = ["sg-005078bb14846cd03"]
+  key_name               = "www"
+  vpc_security_group_ids = ["sg-0ed3cb7d6796758e2"]
   tags = {
     Name = var.instance_names[count.index]
   }
@@ -18,7 +18,7 @@ variable "instance_names" {
 }
 
 resource "aws_s3_bucket" "one" {
-  bucket = "project-netflix-bucket33-jaina"
+  bucket = "netflixproject789012"
   versioning {
     enabled = true
   }
