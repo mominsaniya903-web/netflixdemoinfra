@@ -21,9 +21,6 @@ resource "aws_s3_bucket" "one" {
   bucket = "netflixbucket00"
 }
 
-resource "aws_s3_bucket_versioning" "one" {
-  bucket = aws_s3_bucket.one.id
-
   versioning_configuration {
     status = "Enabled"
   }
