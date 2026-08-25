@@ -7,33 +7,19 @@ resource "aws_instance" "one" {
   ami                    = "ami-0b6d9d3d33ba97d99"
   instance_type          = "t2.medium"
   key_name               = "saniya"
-  vpc_security_group_ids = ["sg-0c960426f2820c282"]
-
+  vpc_security_group_ids = ["sg-0ed3cb7d6796758e2"]
   tags = {
     Name = var.instance_names[count.index]
   }
 }
 
 variable "instance_names" {
-  default = [
-    "jenkins",
-    "tomcat-1",
-    "Monitoring-server"
-  ]
+  default = ["jenkins", "tomcat-1", "Monitoring server"]
 }
 
 resource "aws_s3_bucket" "one" {
   bucket = "my-project-bucket-123456789"
-
-  tags = {
-    Name = "my-project-bucket"
-  }
-}
-
-resource "aws_s3_bucket_versioning" "one" {
-  bucket = aws_s3_bucket.one.id
-
-  versioning_configuration {
-    status = "Enabled"
+  versioning {
+    enabled = true
   }
 }
