@@ -19,9 +19,7 @@ variable "instance_names" {
 
 resource "aws_s3_bucket" "one" {
   bucket = "netflixbucket00"
-}
-
-  versioning_configuration {
-    status = "Enabled"
+  versioning {
+    enabled = true
   }
 }
