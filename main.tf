@@ -18,7 +18,7 @@ variable "instance_names" {
 }
 
 resource "aws_s3_bucket" "one" {
-  bucket = "project-netflix-bucket33"
+  bucket = "project-netflix-bucket33-jaina"
   versioning {
     enabled = true
   }
