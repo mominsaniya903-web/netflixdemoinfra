@@ -18,7 +18,7 @@ variable "instance_names" {
 }
 
 resource "aws_s3_bucket" "one" {
-  bucket = "your-bucket-name"
+  bucket = "netflix-bucket009 "
 }
 
 resource "aws_s3_bucket_versioning" "one" {
